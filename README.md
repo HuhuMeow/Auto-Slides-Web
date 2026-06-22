@@ -12,6 +12,35 @@
 
 ### 用户：部署与使用
 
+#### 推荐：Docker 一键部署
+
+安装 [Docker Engine/Desktop 与 Compose plugin](https://docs.docker.com/compose/install/)，然后在仓库根目录配置 API：
+
+```bash
+cp .env.example .env
+# 编辑 .env，填写 API Key 并修改默认账户密码
+```
+
+标准网络环境：
+
+```bash
+./scripts/docker-deploy.sh
+```
+
+中国大陆镜像流程：
+
+```bash
+./scripts/docker-deploy-cn.sh
+```
+
+需要完整的版面分析、OCR、表格和图片提取能力时，增加 `--with-models`：
+
+```bash
+./scripts/docker-deploy-cn.sh --with-models
+```
+
+脚本会构建前后端、安装 TeX 环境、启动服务并持久化数据库和模型。启动后访问 `http://localhost:8000`。更多选项、数据卷与更新方法见 [Docker 部署说明](docs/docker-deployment.md)。如果不使用 Docker，也可以按下面的本地流程部署。
+
 #### 1. 环境要求
 
 - Python 3.11+
@@ -169,6 +198,8 @@ scripts/           模型下载等维护脚本
 docs/              使用与架构文档
 examples/          原项目论文
 .runtime/          本地数据库、任务产物和模型，不进入 Git
+Dockerfile         前后端与 TeX/ML 运行环境镜像
+docker-compose*.yml 标准及中国大陆镜像部署配置
 ```
 
 提交前运行：
@@ -204,6 +235,35 @@ This project is developed from [Westlake-AGI-Lab/Auto-Slides](https://github.com
 The application accepts an academic PDF and coordinates multiple agents for content extraction, presentation planning, coverage verification, automatic repair, LaTeX Beamer generation, PDF compilation, and optional speech generation. The browser provides task progress, plan and verification views, TEX editing, PDF preview, and reviewable natural-language edits.
 
 ### Users: Deployment and Usage
+
+#### Recommended: one-command Docker deployment
+
+Install [Docker Engine/Desktop and the Compose plugin](https://docs.docker.com/compose/install/), then configure the API from the repository root:
+
+```bash
+cp .env.example .env
+# Edit .env and add an API key and safe default passwords.
+```
+
+Standard network:
+
+```bash
+./scripts/docker-deploy.sh
+```
+
+China mainland mirror flow:
+
+```bash
+./scripts/docker-deploy-cn.sh
+```
+
+Add `--with-models` for layout-aware extraction, OCR, tables, and figures:
+
+```bash
+./scripts/docker-deploy-cn.sh --with-models
+```
+
+The scripts build both application layers, install the TeX toolchain, start the service, and persist application data and models. Open `http://localhost:8000`. See [Docker deployment](docs/docker-deployment.md) for options, volumes, and upgrades. The manual non-Docker workflow remains available below.
 
 #### 1. Requirements
 
@@ -360,6 +420,8 @@ scripts/           Model download and maintenance utilities
 docs/              Usage and architecture documentation
 examples/          Original project paper
 .runtime/          Local database, job artifacts, and models; ignored by Git
+Dockerfile         Frontend, backend, TeX, and ML runtime image
+docker-compose*.yml Standard and China-mainland deployment configuration
 ```
 
 Validate changes before committing:

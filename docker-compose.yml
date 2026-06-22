@@ -1,0 +1,35 @@
+name: autoslides
+
+services:
+  app:
+    image: autoslides-web:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODE_IMAGE: ${NODE_IMAGE:-docker.io/library/node:20-bookworm-slim}
+        PYTHON_IMAGE: ${PYTHON_IMAGE:-docker.io/library/python:3.11-slim-bookworm}
+        NPM_REGISTRY: ${NPM_REGISTRY:-https://registry.npmjs.org}
+        PIP_INDEX_URL: ${PIP_INDEX_URL:-https://pypi.org/simple}
+        DEBIAN_MIRROR: ${DEBIAN_MIRROR:-http://deb.debian.org/debian}
+        DEBIAN_SECURITY_MIRROR: ${DEBIAN_SECURITY_MIRROR:-http://deb.debian.org/debian-security}
+    env_file:
+      - .env
+    environment:
+      AUTOSLIDES_RUNTIME_DIR: /app/.runtime
+      AUTOSLIDES_DATA_DIR: /app/.runtime/data
+      AUTOSLIDES_MARKER_MODEL_DIR: /app/.runtime/models
+      AUTOSLIDES_NOLOGIN: ${AUTOSLIDES_NOLOGIN:-0}
+    init: true
+    ports:
+      - "${AUTOSLIDES_PORT:-8000}:8000"
+    restart: unless-stopped
+    shm_size: "1gb"
+    volumes:
+      - autoslides-data:/app/.runtime/data
+      - autoslides-models:/app/.runtime/models
+      - ./backend/settings.toml:/app/backend/settings.toml:ro
+
+volumes:
+  autoslides-data:
+  autoslides-models:

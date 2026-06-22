@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      args:
+        NODE_IMAGE: ${CN_NODE_IMAGE:-m.daocloud.io/docker.io/library/node:20-bookworm-slim}
+        PYTHON_IMAGE: ${CN_PYTHON_IMAGE:-m.daocloud.io/docker.io/library/python:3.11-slim-bookworm}
+        NPM_REGISTRY: ${CN_NPM_REGISTRY:-https://registry.npmmirror.com}
+        PIP_INDEX_URL: ${CN_PIP_INDEX_URL:-https://mirrors.aliyun.com/pypi/simple/}
+        DEBIAN_MIRROR: ${CN_DEBIAN_MIRROR:-https://mirrors.tuna.tsinghua.edu.cn/debian}
+        DEBIAN_SECURITY_MIRROR: ${CN_DEBIAN_SECURITY_MIRROR:-https://mirrors.tuna.tsinghua.edu.cn/debian-security}

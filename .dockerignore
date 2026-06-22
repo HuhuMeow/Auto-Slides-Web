@@ -1,0 +1,17 @@
+.git
+.github
+.agents
+.codex
+.env
+.runtime
+.venv
+__pycache__
+*.py[cod]
+*.log
+backend/settings.toml
+docs
+examples
+frontend/.env
+frontend/dist
+frontend/node_modules
+README.md
