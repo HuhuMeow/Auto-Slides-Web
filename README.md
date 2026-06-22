@@ -180,7 +180,18 @@ npm run lint
 npm run build
 ```
 
-修改 API 时，请同步更新 `backend/schemas.py` 与 `frontend/src/api/types.ts`。完整说明见 [Backend 文档](backend/README.md)、[Agent 架构](docs/agent-architecture.md) 和 [贡献指南](AGENTS.md)。
+修改 API 时，请同步更新 `backend/schemas.py` 与 `frontend/src/api/types.ts`。完整说明见 [Backend 文档](backend/README.md) 和 [Agent 架构](docs/agent-architecture.md)。
+
+### 许可证与商业使用
+
+**本项目使用的不是标准 MIT 许可证。未经许可，禁止将本项目用于任何商业目的。** 商业使用包括但不限于：将本项目或其修改版本集成到收费产品或服务、用于商业部署、提供付费托管服务，或者以其他方式直接或间接获取商业利益。
+
+如需商业使用，必须事先同时获得以下双方的明确书面许可：
+
+1. 原项目 [Auto-Slides](https://github.com/Westlake-AGI-Lab/Auto-Slides) 的原作者或相关权利人；
+2. 本二次开发项目的作者或维护者。
+
+仅获得其中一方许可并不足以获得本项目的商业使用授权。其他许可条款请参阅 [LICENSE](LICENSE)。
 
 ---
 
@@ -360,8 +371,15 @@ npm run lint
 npm run build
 ```
 
-When changing the API, keep `backend/schemas.py` and `frontend/src/api/types.ts` synchronized. See the [Backend guide](backend/README.md), [Agent architecture](docs/agent-architecture.md), and [contributor guide](AGENTS.md) for details.
+When changing the API, keep `backend/schemas.py` and `frontend/src/api/types.ts` synchronized. See the [Backend guide](backend/README.md) and [Agent architecture](docs/agent-architecture.md) for details.
 
-## License
+### License and Commercial Use
 
-See [LICENSE](LICENSE). This derivative project retains attribution to the original Auto-Slides project.
+**This project is not distributed under the standard MIT License. Commercial use is prohibited unless separately authorized.** Commercial use includes, without limitation, integration into a paid product or service, commercial deployment, paid hosting, or any other direct or indirect commercial exploitation of this project or its derivatives.
+
+Any commercial use requires prior, explicit, written permission from both:
+
+1. the original authors or relevant rightsholders of [Auto-Slides](https://github.com/Westlake-AGI-Lab/Auto-Slides); and
+2. the author or maintainer of this derivative project.
+
+Permission from only one party is insufficient to authorize commercial use of this project. See [LICENSE](LICENSE) for the remaining terms.
