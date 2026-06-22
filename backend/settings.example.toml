@@ -1,0 +1,5 @@
+# Copy this file to backend/settings.toml before using --nologin.
+# Credentials are read only by the backend and never prefilled in the browser.
+[single_user]
+username = "localuser"
+password = "localpass"

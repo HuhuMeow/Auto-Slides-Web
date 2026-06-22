@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto-Slides Mock Preview</title>
+    <style>
+      body {
+        margin: 0;
+        background: #e5e7eb;
+        color: #111827;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      }
+      .page {
+        width: min(960px, calc(100vw - 48px));
+        aspect-ratio: 16 / 9;
+        margin: 32px auto;
+        background: white;
+        border: 1px solid #d1d5db;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+        padding: 48px;
+      }
+      h1 {
+        margin: 0 0 16px;
+        font-size: 34px;
+      }
+      h2 {
+        margin: 0 0 18px;
+        font-size: 26px;
+      }
+      p,
+      li {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+      .tag {
+        display: inline-block;
+        margin-bottom: 24px;
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        padding: 5px 9px;
+        font-size: 13px;
+        color: #475569;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page">
+      <span class="tag">Mock PDF Preview</span>
+      <h1>Auto-Slides</h1>
+      <p>Interactive multi-agent system for creating and customizing research presentations.</p>
+    </section>
+    <section class="page">
+      <h2>Problem and Motivation</h2>
+      <ul>
+        <li>LLM chat lacks global structure for systematic paper understanding.</li>
+        <li>Research presentations require narrative and visual grounding.</li>
+        <li>Auto-Slides converts papers into pedagogically organized Beamer slides.</li>
+      </ul>
+    </section>
+    <section class="page">
+      <h2>Multi-Agent Pipeline</h2>
+      <ul>
+        <li>Parser and Planner Agents structure paper content.</li>
+        <li>Verification and Adjustment Agents improve fidelity.</li>
+        <li>Generator and Editor Agents produce and refine slides.</li>
+      </ul>
+    </section>
+  </body>
+</html>

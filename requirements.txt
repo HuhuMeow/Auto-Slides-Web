@@ -1,0 +1,41 @@
+# 直接依赖（已按当前 ptb 环境版本固定）
+# 完整可复现环境请查看 requirements.lock
+
+# 基础与工具
+openai==1.82.0
+python-dotenv==1.1.0
+requests==2.32.3
+tqdm==4.67.1
+langsmith==0.3.42
+fastapi==0.115.12
+uvicorn==0.34.2
+python-multipart==0.0.20
+
+# LangChain 生态
+langchain==0.3.25
+langchain-core==0.3.61
+langchain-openai==0.3.18
+langchain-community==0.3.24
+langchain-text-splitters==0.3.8
+
+# PDF 与图片处理
+PyMuPDF==1.26.0
+pdf2image==1.17.0
+pillow==10.4.0
+opencv-python==4.11.0.86
+
+# 结构化提取与 OCR
+modelscope==1.26.0
+marker-pdf==1.7.4
+surya-ocr==0.14.5
+paddleocr==3.1.0
+paddlepaddle==3.1.0
+
+# LaTeX AST 解析
+pylatexenc==2.10
+
+# 评测/ML（评测脚本依赖）
+PyPDF2==3.0.1
+transformers==4.52.3
+torch==2.7.0
+torchvision==0.22.0
